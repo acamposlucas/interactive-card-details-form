@@ -20,7 +20,7 @@
 }
 
 body {
-	background: url("./images/bg-main-mobile.png");
+	background-image: url("./images/bg-main-mobile.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--clr-white);
@@ -29,7 +29,7 @@ body {
 
 @media (min-width: 1024px) {
 	body {
-		background: url("./images/bg-main-desktop.png");
+		background-image: url("./images/bg-main-desktop.png");
 	}
 }
 
@@ -41,30 +41,58 @@ input {
 }
 
 #app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+	#app {
+		flex-direction: row;
+	}
 }
 
 .cards {
-	min-height: 25vh;
+	/* min-height: 25vh; */
 	position: relative;
 	margin-block-start: 2rem;
 	width: 90%;
 	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+	.cards {
+		width: 30%;
+	}
 }
 
 .card {
 	background-repeat: no-repeat;
 	background-size: contain;
-	width: 286px;
-	height: 160px;
-	position: absolute;
+	width: 85%;
+	height: 154px;
+	/* position: absolute; */
 }
 
 .card-backside {
 	background-image: url("./images/bg-card-back.png");
 	right: 0;
+	align-self: flex-end;
 }
 
-.card-backside span {
+@media (min-width: 1024px) {
+	.card-backside {
+		top: 50%;
+		transform: translateY(-50%);
+		width: 300px;
+		height: 200px;
+	}
+}
+
+/* .card-backside span {
 	position: absolute;
 	top: 49%;
 	right: 2rem;
@@ -72,15 +100,18 @@ input {
 	transform: translateY(-49%);
 	line-height: 1;
 	letter-spacing: 1.1px;
-}
+} */
 
 .card-frontside {
 	background-image: url("./images/bg-card-front.png");
 	bottom: -1.5rem;
+	position: absolute;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
+	margin-block-start: -5rem;
 	padding-block-end: 1rem;
+	position: relative;
 }
 
 .card-frontside::before {
@@ -124,11 +155,22 @@ input {
 
 #container {
 	background-color: var(--clr-white);
+	flex: 1;
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	#container {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		/* padding-inline-start: 10rem; */
+	}
 }
 
 form {
 	width: 90%;
-	max-width: 1440px;
+	max-width: 600px;
 	margin-inline: auto;
 	padding-block: 6rem 3rem;
 	display: flex;
