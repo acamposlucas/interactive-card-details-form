@@ -61,12 +61,65 @@ input {
 
 .card-backside {
 	background-image: url("./images/bg-card-back.png");
-	right: 1rem;
+	right: 0;
+}
+
+.card-backside span {
+	position: absolute;
+	top: 49%;
+	right: 2rem;
+	font-size: var(--fs-xs);
+	transform: translateY(-49%);
+	line-height: 1;
+	letter-spacing: 1.1px;
 }
 
 .card-frontside {
 	background-image: url("./images/bg-card-front.png");
 	bottom: -1.5rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-block-end: 1rem;
+}
+
+.card-frontside::before {
+	content: "";
+	display: block;
+	background-image: url("./images/card-logo.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 60px;
+	height: 32px;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+}
+
+.card-frontside__container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.card-frontside__container .card-number {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.card-frontside__container .card-number span {
+	letter-spacing: 1.1px;
+	font-size: var(--fs-lg);
+}
+.card-frontside__container .card-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.card-frontside__container .card-content span {
+	font-size: var(--fs-xs);
+	letter-spacing: 1.1px;
 }
 
 #container {
