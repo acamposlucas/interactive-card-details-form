@@ -1,0 +1,36 @@
+:root {
+	--clr-red: hsl(0, 100%, 66%);
+	--clr-white: hsl(0, 0%, 100%);
+	--clr-violet-300: hsl(270, 3%, 87%);
+	--clr-violet-700: hsl(279, 6%, 55%);
+	--clr-violet-900: hsl(278, 68%, 11%);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: url("./images/bg-main-mobile.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--clr-white);
+	font-family: "Space Grotesk", sans-serif;
+	min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+	body {
+		background: url("./images/bg-main-desktop.png");
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
