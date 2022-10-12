@@ -88,7 +88,7 @@ input {
 }
 
 .card {
-	background-size: 95% 95%;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	width: var(--card-width);
 	height: var(--card-height);
@@ -110,21 +110,61 @@ input {
 .backside-span {
 	position: absolute;
 	right: 3rem;
-	top: 46.5%;
-	transform: translateY(-46.5%);
-	font-size: var(--fs-xs);
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: var(--fs-sm);
 }
 
 .card.frontside {
 	background-image: url("./images/bg-card-front.png");
 	margin-top: calc(-1 * (var(--card-height) / 2));
 	transform: translate(-5%, 4%);
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.card.frontside::before {
+	content: "";
+	position: absolute;
+	background-image: url("./images/card-logo.svg");
+	background-repeat: no-repeat;
+	width: 50%;
+	height: 50%;
+	top: 1rem;
+	left: 1rem;
 }
 
 @media (min-width: 1440px) {
 	.card.frontside {
 		transform: translate(-20%, -115%);
 	}
+}
+
+.frontside-inner-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding-inline: 1rem;
+	padding-block: 1rem;
+}
+
+.card-number {
+	display: flex;
+	align-self: flex-start;
+	gap: 1rem;
+	font-size: var(--fs-lg);
+	letter-spacing: 1.5px;
+}
+
+.card-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	font-size: var(--fs-xs);
 }
 
 #container {
