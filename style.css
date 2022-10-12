@@ -88,15 +88,17 @@ input {
 }
 
 .card {
-	background-size: 100% 100%;
+	background-size: 95% 95%;
+	background-repeat: no-repeat;
 	width: var(--card-width);
 	height: var(--card-height);
+	position: relative;
 }
 
 .card.backside {
 	background-image: url("./images/bg-card-back.png");
 	margin-top: 1px;
-	transform: translateX(9%);
+	transform: translateX(8%);
 }
 
 @media (min-width: 1440px) {
@@ -105,10 +107,18 @@ input {
 	}
 }
 
+.backside-span {
+	position: absolute;
+	right: 3rem;
+	top: 46.5%;
+	transform: translateY(-46.5%);
+	font-size: var(--fs-xs);
+}
+
 .card.frontside {
 	background-image: url("./images/bg-card-front.png");
 	margin-top: calc(-1 * (var(--card-height) / 2));
-	transform: translate(0, 6%);
+	transform: translate(-5%, 4%);
 }
 
 @media (min-width: 1440px) {
